@@ -3,11 +3,16 @@ from flask import Flask, jsonify
 app = Flask(__name__)
 
 
-@app.route('/')
-def hello_world():
+@app.route('/hello')
+def hello():
     json_file = {}
-    json_file['query'] = 'hello_world'
-    print("returning hellow world")
+    json_file['query'] = 'hellow'
+    return jsonify(json_file)
+
+@app.route('/world')
+def world():
+    json_file = {}
+    json_file['query'] = 'worldy'
     return jsonify(json_file)
 
 
